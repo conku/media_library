@@ -6,8 +6,8 @@ import (
 	"mime/multipart"
 	"reflect"
 
+	"github.com/conku/gorm"
 	"github.com/conku/serializable_meta"
-	"github.com/jinzhu/gorm"
 )
 
 func cropField(field *gorm.Field, scope *gorm.Scope) (cropped bool) {

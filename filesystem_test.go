@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/conku/gorm"
 	"github.com/conku/media_library"
 	"github.com/conku/qor/test/utils"
-	"github.com/jinzhu/gorm"
 )
 
 var db = utils.TestDB()
