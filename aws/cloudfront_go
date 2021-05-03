@@ -1,27 +1,23 @@
 package aws
 
 import (
-	"bytes"
 	"io"
 	"io/ioutil"
-	"mime"
 	"net/http"
 	"os"
-	"path"
 	"strings"
-
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/conku/media_library"
+	// "github.com/aws/aws-sdk-go/aws"
+	// "github.com/aws/aws-sdk-go/service/s3"
 )
 
 // required
 var awsCloudFontDomain = os.Getenv("QOR_AWS_CLOUD_FRONT_DOMAIN")
 
 type CloudFront struct {
-	S3
+	//S3
 }
 
+/*
 // GetURLTemplate get url template
 func (s CloudFront) GetURLTemplate(option *media_library.Option) (path string) {
 	if path = option.Get("URL"); path == "" {
@@ -80,7 +76,7 @@ func (s CloudFront) Store(url string, option *media_library.Option, reader io.Re
 	_, err = s3client().PutObject(params)
 	return err
 }
-
+*/
 // Retrieve retrieve file content with url
 func (s CloudFront) Retrieve(url string) (file *os.File, err error) {
 	if !strings.HasPrefix(url, "http") {
