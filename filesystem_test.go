@@ -44,7 +44,7 @@ func init() {
 }
 
 func TestURLWithoutFile(t *testing.T) {
-	user := User{Name: "jinzhu"}
+	user := User{Name: "conku"}
 
 	if got, want := user.Avatar.URL(), ""; got != want {
 		t.Errorf(`media_library.Base#URL() == %q, want %q`, got, want)
@@ -59,7 +59,7 @@ func TestURLWithoutFile(t *testing.T) {
 
 func TestURLWithFile(t *testing.T) {
 	var filePath string
-	user := User{Name: "jinzhu"}
+	user := User{Name: "conku"}
 
 	if avatar, err := os.Open("test/logo.png"); err != nil {
 		panic("file doesn't exist")
@@ -93,7 +93,7 @@ func TestURLWithFile(t *testing.T) {
 }
 
 func TestSaveIntoFileSystem(t *testing.T) {
-	var user = User{Name: "jinzhu"}
+	var user = User{Name: "conku"}
 	if avatar, err := os.Open("test/logo.png"); err == nil {
 		user.Avatar.Scan(avatar)
 		if err := db.Save(&user).Error; err == nil {
@@ -131,7 +131,7 @@ func TestSaveIntoFileSystem(t *testing.T) {
 }
 
 func TestSaveGifIntoFileSystem(t *testing.T) {
-	var user = User{Name: "jinzhu"}
+	var user = User{Name: "conku"}
 	if avatar, err := os.Open("test/test.gif"); err == nil {
 		var frames int
 		if g, err := gif.DecodeAll(avatar); err == nil {
